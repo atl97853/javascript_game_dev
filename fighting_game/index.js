@@ -160,7 +160,7 @@ function animate() {
         player.isAttacking
     ) {
         player.isAttacking = false;
-        console.log('collision!');
+        document.querySelector('#enemyHealth').style.width = '20%'
     };
 
     if (
