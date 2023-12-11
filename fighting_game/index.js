@@ -191,7 +191,7 @@ window.addEventListener('keydown', (event) => {
             player.velocity.y = -20;
             break;
         case ' ':
-            player.attack()
+            player.attack();
             break;
 
         // enemy keys
@@ -207,7 +207,7 @@ window.addEventListener('keydown', (event) => {
             enemy.velocity.y = -20;
             break;
         case 'ArrowDown':
-            enemy.isAttacking = true;
+            enemy.attack();
             break;
     };
     console.log(event.key);
