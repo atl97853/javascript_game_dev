@@ -6,6 +6,14 @@ Attacks ✔
 Health Bar Interface ✔
 Game Timers and Game Over ✔
 
+Sprites and Animation
+Background Sprite 
+Shop Sprite With Animation
+Player Sprite (Samurai Mack)
+Enemy Sprite (Kenji)
+Interface Design and Animation
+Pushing Live 
+
 last minute - 05/12
 https://youtu.be/vyqbNFMDRGQ?si=4TFbQPSSxnNgU2sL&t=2594
 
