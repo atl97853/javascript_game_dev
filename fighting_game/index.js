@@ -63,6 +63,10 @@ class Sprite {
     };
 };
 
+class Fighter extends Sprite {
+
+};
+
 const player = new Sprite({
     position: {
         x: 0,
