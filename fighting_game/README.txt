@@ -22,3 +22,6 @@ https://youtu.be/vyqbNFMDRGQ?si=NOlXCC6CBHUAGYZm&t=4295
 
 last minute - 10/12
 https://youtu.be/vyqbNFMDRGQ?si=knfviZiOhfnzCf72&t=6723
+
+last minute - 14/12
+https://www.youtube.com/watch?v=vyqbNFMDRGQ&t=6723s
