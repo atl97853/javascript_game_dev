@@ -1,4 +1,4 @@
-class Sprite {
+class Fighter {
     constructor({ position, velocity, color = 'red', offset }) {
         this.position = position;
         this.velocity = velocity;
@@ -53,6 +53,17 @@ class Sprite {
     };
 };
 
-class Fighter extends Sprite {
+class Sprite extends Fighter {
+    constructor({ position, imageSrc }) {
+        this.image = new Image();
+        this.image.src = imageSrc;
+    }
 
+    draw() {
+        c.drawImage(this.image, this.position.x, this.position.y)
+    };
+
+    update() {
+        this.draw()
+    };
 };
