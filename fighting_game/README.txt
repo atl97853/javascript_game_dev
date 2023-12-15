@@ -8,7 +8,7 @@ Game Timers and Game Over ✔
 
 Sprites and Animation:
 Background Sprite ✔
-Shop Sprite With Animation
+Shop Sprite With Animation ✔
 Player Sprite (Samurai Mack)
 Enemy Sprite (Kenji)
 Interface Design and Animation
