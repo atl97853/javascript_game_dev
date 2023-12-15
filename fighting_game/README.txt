@@ -7,7 +7,7 @@ Health Bar Interface ✔
 Game Timers and Game Over ✔
 
 Sprites and Animation:
-Background Sprite 
+Background Sprite ✔
 Shop Sprite With Animation
 Player Sprite (Samurai Mack)
 Enemy Sprite (Kenji)
