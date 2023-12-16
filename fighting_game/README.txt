@@ -12,7 +12,7 @@ Shop Sprite With Animation ✔
 Player Sprite (Samurai Mack)
     Idle ✔
     Run ✔
-    Jump
+    Jump ✔
     Attack
 Enemy Sprite (Kenji)
 Interface Design and Animation
