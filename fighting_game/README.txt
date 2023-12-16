@@ -10,8 +10,8 @@ Sprites and Animation:
 Background Sprite ✔
 Shop Sprite With Animation ✔
 Player Sprite (Samurai Mack)
-    Idle
-    Run
+    Idle ✔
+    Run ✔
     Jump
     Attack
 Enemy Sprite (Kenji)
