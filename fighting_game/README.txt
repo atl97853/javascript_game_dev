@@ -13,7 +13,7 @@ Player Sprite (Samurai Mack)
     Idle ✔
     Run ✔
     Jump ✔
-    Attack
+    Attack ✔
 Enemy Sprite (Kenji)
 Interface Design and Animation
 Pushing Live 
