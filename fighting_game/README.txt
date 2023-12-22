@@ -14,7 +14,7 @@ Player Sprite (Samurai Mack)
     Run ✔
     Jump ✔
     Attack ✔
-Enemy Sprite (Kenji)
+Enemy Sprite (Kenji) ✔
 Interface Design and Animation
 Pushing Live 
 
