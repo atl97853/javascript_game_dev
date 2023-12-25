@@ -15,6 +15,9 @@ Player Sprite (Samurai Mack)
     Jump ✔
     Attack ✔
 Enemy Sprite (Kenji) ✔
+React to Sprite Attacks ✔
+Receive Hit Animation ✔
+Death Animation 
 Interface Design and Animation
 Pushing Live 
 
@@ -38,3 +41,5 @@ https://youtu.be/vyqbNFMDRGQ?si=Yl14r8CCqbLM40Pr&t=8585
 
 last minute - 16/12
 https://youtu.be/vyqbNFMDRGQ?si=8SK8Ijl1GOCEHG3M&t=10683
+
+https://youtu.be/vyqbNFMDRGQ?si=7Rh9xtZ9yPD4Ho4_
