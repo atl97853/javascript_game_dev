@@ -17,7 +17,7 @@ Player Sprite (Samurai Mack)
 Enemy Sprite (Kenji) ✔
 React to Sprite Attacks ✔
 Receive Hit Animation ✔
-Death Animation ✔
+Death Animation ✔ 
 Interface Design and Animation
 Pushing Live 
 
