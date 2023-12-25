@@ -18,7 +18,7 @@ Enemy Sprite (Kenji) ✔
 React to Sprite Attacks ✔
 Receive Hit Animation ✔
 Death Animation ✔ 
-Interface Design and Animation
+Interface Design and Animation ✔ 
 Pushing Live 
 
 last minute - 05/12
