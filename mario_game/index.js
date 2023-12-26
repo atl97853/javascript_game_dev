@@ -11,9 +11,12 @@ class Player {
             x: 100,
             y: 100,
         }
+        this.velocity = {
+            x: 0,
+            y: 1
+        }
         this.width = 30
         this.height = 30
-
     }
 
     draw() {
