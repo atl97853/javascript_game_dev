@@ -3,7 +3,7 @@ https://youtu.be/4q2vvZn5aoo?si=yk1amRrE4MnanK9y
 
 Todo list: 
 Project setup ✔
-Player creation 
+Player creation ✔
 Gravity 
 Player movement 
 Platforms 
