@@ -2,7 +2,7 @@ Mario Game Tutorial with JavaScript and HTML Canvas
 https://youtu.be/4q2vvZn5aoo?si=yk1amRrE4MnanK9y
 
 Todo list: 
-Project setup
+Project setup ✔
 Player creation 
 Gravity 
 Player movement 
