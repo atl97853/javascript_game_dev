@@ -64,6 +64,12 @@ function animate() {
     requestAnimationFrame(animate)
     c.clearRect(0, 0, canvas.width, canvas.height)
     player.update()
+
+    if (keys.right.pressed) {
+        player.velocity.x = 5
+    } else if (keys.left.pressed) {
+        player.velocity.x = -5
+    } else player.velocity.x = 0
 }
 
 animate()
@@ -71,38 +77,41 @@ animate()
 addEventListener('keydown', ({ key }) => {
     switch (key) {
         case 'a':
-            console.log('this is left')
+            console.log('left')
+            keys.left.pressed = true
             break
         case 's':
-            console.log('this is down')
+            console.log('down')
             break
         case 'd':
-            console.log('this is right')
-            player.velocity.x = 1
+            console.log('right')
+            keys.right.pressed = true
             break
         case 'w':
-            console.log('this is up')
+            console.log('up')
             player.velocity.y -= 20
             break
     }
+    console.log(keys.right)
 })
 
 addEventListener('keyup', ({ key }) => {
     switch (key) {
         case 'a':
-            console.log('this is left')
+            console.log('left')
+            keys.left.pressed = false
             break
         case 's':
-            console.log('this is down')
+            console.log('down')
             break
         case 'd':
-            console.log('this is right')
-            player.velocity.x = 0
+            console.log('right')
+            keys.right.pressed = false
             break
         case 'w':
-            console.log('this is up')
-            player.velocity.y -= 20
+            console.log('up')
             break
     }
+    console.log(keys.right)
 })
 
