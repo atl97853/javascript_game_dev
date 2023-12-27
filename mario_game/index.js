@@ -30,10 +30,20 @@ class Player {
     }
 
     update() {
-        this.position.y += this.velocity.y
         this.draw()
+        this.position.y += this.velocity.y
     }
 }
 
 const player = new Player()
+
+function animate() {
+    requestAnimationFrame(animate)
+    c.clearRect(0, 0, canvas.width, canvas.height)
+    player.update()
+}
+
+animate()
+// commit animate function creation
+// commit when you finish to create the gravity effect in the game 
 
