@@ -45,6 +45,20 @@ class Player {
 }
 
 const player = new Player()
+const keys = {
+    right: {
+        pressed: false
+    },
+    left: {
+        pressed: false
+    },
+    up: {
+        pressed: false
+    },
+    down: {
+        pressed: false
+    },
+}
 
 function animate() {
     requestAnimationFrame(animate)
