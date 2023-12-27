@@ -32,7 +32,9 @@ class Player {
 
     update() {
         this.draw()
+        this.position.x += this.velocity.x
         this.position.y += this.velocity.y
+
         if (this.position.y + this.height + this.velocity.y <= canvas.height) {
             this.velocity.y += gravity
         } else {
@@ -56,14 +58,18 @@ addEventListener('keydown', ({ key }) => {
     switch (key) {
         case 'a':
             console.log('this is left')
-        case 'a':
-            console.log('this is left')
-        case 'a':
-            console.log('this is left')
-        case 'a':
-            console.log('this is left')
-        case 'a':
-            console.log('this is left')
+            break
+        case 's':
+            console.log('this is down')
+            break
+        case 'd':
+            console.log('this is right')
+            player.velocity.x += 1
+            break
+        case 'w':
+            console.log('this is up')
+            player.velocity.y -= 20
+            break
     }
 }
 )
