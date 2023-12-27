@@ -52,4 +52,20 @@ function animate() {
 
 animate()
 
+addEventListener('keydown', ({ key }) => {
+    switch (key) {
+        case 'a':
+            console.log('this is left')
+        case 'a':
+            console.log('this is left')
+        case 'a':
+            console.log('this is left')
+        case 'a':
+            console.log('this is left')
+        case 'a':
+            console.log('this is left')
+    }
+}
+)
+
 
