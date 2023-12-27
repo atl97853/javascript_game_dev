@@ -5,7 +5,7 @@ Todo list:
 Project setup ✔
 Player creation ✔
 Gravity ✔
-Player movement 
+Player movement ✔
 Platforms 
 "Scroll" the background 
 Win scenario 
