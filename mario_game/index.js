@@ -64,14 +64,31 @@ addEventListener('keydown', ({ key }) => {
             break
         case 'd':
             console.log('this is right')
-            player.velocity.x += 1
+            player.velocity.x = 1
             break
         case 'w':
             console.log('this is up')
             player.velocity.y -= 20
             break
     }
-}
-)
+})
 
+addEventListener('keyup', ({ key }) => {
+    switch (key) {
+        case 'a':
+            console.log('this is left')
+            break
+        case 's':
+            console.log('this is down')
+            break
+        case 'd':
+            console.log('this is right')
+            player.velocity.x = 0
+            break
+        case 'w':
+            console.log('this is up')
+            player.velocity.y -= 20
+            break
+    }
+})
 
