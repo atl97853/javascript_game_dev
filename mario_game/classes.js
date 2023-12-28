@@ -38,6 +38,16 @@ class Player {
 
 class Platform {
     constructor() {
+        this.position = {
+            x: 200,
+            y: 200
+        }
+        this.width = 200
+        this.height = 20
+    }
 
+    draw() {
+        c.fillStyle = 'blue'
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
