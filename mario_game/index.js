@@ -7,6 +7,18 @@ canvas.height = 576
 
 const gravity = 0.5
 
+// helper objects
+const smallPlatHelper = new GenericObjects({
+    x: 0,
+    y: 0,
+    imageSrc: './assets_mario_game/platformSmallTall.png',
+})
+const platHelper = new GenericObjects({
+    x: 0,
+    y: 0,
+    imageSrc: './assets_mario_game/platform.png',
+})
+
 let player = new Player()
 // const platforms = [new Platform({ x: 200, y: 100 }), new Platform({ x: 500, y: 200 })]
 let platforms = []
@@ -36,22 +48,42 @@ function init() {
     // const platforms = [new Platform({ x: 200, y: 100 }), new Platform({ x: 500, y: 200 })]
     platforms = [
         new Platform({
+            x:
+                platHelper.width * 4 +
+                300 -
+                2 +
+                platHelper.width -
+                smallPlatHelper.width,
+            y: 270,
+            imageSrc: './assets_mario_game/platformSmallTall.png',
+        }),
+        new Platform({
             x: -1,
             y: 470,
             imageSrc: './assets_mario_game/platform.png',
         }),
         new Platform({
-            x: 500,
+            x: platHelper.width - 3,
             y: 470,
             imageSrc: './assets_mario_game/platform.png',
         }),
         new Platform({
-            x: 540 * 2 + 100,
+            x: platHelper.width * 2 + 100,
             y: 470,
             imageSrc: './assets_mario_game/platform.png',
         }),
         new Platform({
-            x: 540 * 3 + 100,
+            x: platHelper.width * 3 + 300,
+            y: 470,
+            imageSrc: './assets_mario_game/platform.png',
+        }),
+        new Platform({
+            x: platHelper.width * 4 + 300 - 2,
+            y: 470,
+            imageSrc: './assets_mario_game/platform.png',
+        }),
+        new Platform({
+            x: platHelper.width * 5 + 700 - 2,
             y: 470,
             imageSrc: './assets_mario_game/platform.png',
         }),
@@ -124,7 +156,7 @@ function animate() {
 
     // win condition 
     // console.log(scrollOffset)
-    if (scrollOffset > 2000) {
+    if (scrollOffset > platHelper.width * 5 + 300 - 2) {
         console.log('you win')
     }
     // lose condition
@@ -151,7 +183,7 @@ addEventListener('keydown', ({ key }) => {
             break
         case 'w':
             console.log('up')
-            player.velocity.y -= 10
+            player.velocity.y -= 15
             break
     }
     console.log(keys.right)
