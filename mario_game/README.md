@@ -11,6 +11,6 @@ Platforms ✔
 Win scenario ✔
 Image platforms ✔
 Parallax scroll ✔
-Death pits 
+Death pits ✔
 Level creation
 Fine-tuning 
