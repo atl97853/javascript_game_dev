@@ -24,6 +24,15 @@ const platforms = [
     })
 ]
 
+const genericObjects = [
+    new GenericObjects({
+        x: 0,
+        y: -1,
+        imageSrc: './assets_mario_game/background.png',
+    }),
+]
+
+
 const keys = {
     right: {
         pressed: false
@@ -43,6 +52,10 @@ function animate() {
     requestAnimationFrame(animate)
     c.fillStyle = 'white'
     c.fillRect(0, 0, canvas.width, canvas.height)
+
+    genericObjects.forEach(object => {
+        object.draw()
+    })
     platforms.forEach(platform => {
         platform.draw()
     })
