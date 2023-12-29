@@ -25,7 +25,7 @@ class Player {
     }
 }
 
-const gravity = 10
+// const gravity = 10
 
 const player = new Player({
     x: canvas.width / 2,
@@ -38,10 +38,10 @@ function animate() {
     c.fillRect(0, 0, canvas.width, canvas.height)
     player.draw()
 
-    // gravity
-    if (player.position.y + player.height < canvas.height) {
-        player.position.y += gravity
-    }
+    // // gravity
+    // if (player.position.y + player.height < canvas.height) {
+    //     player.position.y += gravity
+    // }
 
 }
 
@@ -51,15 +51,19 @@ addEventListener('keydown', ({ key }) => {
     switch (key) {
         case 'w':
             console.log('up')
+            player.position.y -= 20
             break
         case 'd':
             console.log('right')
+            player.position.x += 20
             break
         case 'a':
             console.log('left')
+            player.position.x -= 20
             break
-        case ' ':
-            console.log('attack')
+        case 's':
+            console.log('down')
+            player.position.y += 20
             break
     }
 })
