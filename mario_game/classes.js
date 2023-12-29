@@ -40,7 +40,7 @@ class Platform {
     constructor() {
         this.position = {
             x: 200,
-            y: 200
+            y: 100
         }
         this.width = 200
         this.height = 20
