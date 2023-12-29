@@ -8,7 +8,7 @@ Gravity ✔
 Player movement ✔
 Platforms ✔
 "Scroll" the background ✔
-Win scenario 
+Win scenario ✔
 Image platforms 
 Parallax scroll
 Death pits 
