@@ -7,11 +7,9 @@ canvas.height = 576
 
 const gravity = 0.5
 
-let scrollOffset = 0
-
-const player = new Player()
+let player = new Player()
 // const platforms = [new Platform({ x: 200, y: 100 }), new Platform({ x: 500, y: 200 })]
-const platforms = [
+let platforms = [
     new Platform({
         x: -1,
         y: 470,
@@ -21,10 +19,15 @@ const platforms = [
         x: 500,
         y: 470,
         imageSrc: './assets_mario_game/platform.png',
-    })
+    }),
+    new Platform({
+        x: 540 * 2 + 100,
+        y: 470,
+        imageSrc: './assets_mario_game/platform.png',
+    }),
 ]
 
-const genericObjects = [
+let genericObjects = [
     new GenericObjects({
         x: -1,
         y: -1,
@@ -53,6 +56,43 @@ const keys = {
     },
 }
 
+let scrollOffset = 0
+
+function init() {
+
+    player = new Player()
+    // const platforms = [new Platform({ x: 200, y: 100 }), new Platform({ x: 500, y: 200 })]
+    platforms = [
+        new Platform({
+            x: -1,
+            y: 470,
+            imageSrc: './assets_mario_game/platform.png',
+        }),
+        new Platform({
+            x: 500,
+            y: 470,
+            imageSrc: './assets_mario_game/platform.png',
+        }),
+        new Platform({
+            x: 540 * 2 + 100,
+            y: 470,
+            imageSrc: './assets_mario_game/platform.png',
+        }),
+    ]
+
+    genericObjects = [
+        new GenericObjects({
+            x: -1,
+            y: -1,
+            imageSrc: './assets_mario_game/background.png',
+        }),
+        new GenericObjects({
+            x: -1,
+            y: -1,
+            imageSrc: './assets_mario_game/hills.png',
+        }),
+    ]
+}
 function animate() {
     requestAnimationFrame(animate)
     c.fillStyle = 'white'
@@ -104,11 +144,18 @@ function animate() {
             player.velocity.y = 0
         }
     })
+
+    // win condition 
     // console.log(scrollOffset)
     if (scrollOffset > 2000) {
         console.log('you win')
     }
+    // lose condition
+    if (player.position.y > canvas.height) {
+        init()
+    }
 }
+
 
 animate()
 
