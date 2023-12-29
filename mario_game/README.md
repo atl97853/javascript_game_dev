@@ -9,7 +9,7 @@ Player movement ✔
 Platforms ✔
 "Scroll" the background ✔
 Win scenario ✔
-Image platforms 
+Image platforms ✔
 Parallax scroll
 Death pits 
 Level creation
