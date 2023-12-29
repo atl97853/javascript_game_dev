@@ -6,7 +6,7 @@ Project setup ✔
 Player creation ✔
 Gravity ✔
 Player movement ✔
-Platforms 
+Platforms ✔
 "Scroll" the background 
 Win scenario 
 Image platforms 
