@@ -26,9 +26,14 @@ const platforms = [
 
 const genericObjects = [
     new GenericObjects({
-        x: 0,
+        x: -1,
         y: -1,
         imageSrc: './assets_mario_game/background.png',
+    }),
+    new GenericObjects({
+        x: -1,
+        y: -1,
+        imageSrc: './assets_mario_game/hills.png',
     }),
 ]
 
@@ -76,11 +81,17 @@ function animate() {
                 platform.draw()
                 platform.position.x -= 5
             })
+            genericObjects.forEach((genericObjects) => {
+                genericObjects.position.x -= 3
+            })
         } else if (keys.left.pressed) {
             scrollOffset -= 5
             platforms.forEach(platform => {
                 platform.draw()
                 platform.position.x += 5
+            })
+            genericObjects.forEach((genericObjects) => {
+                genericObjects.position.x += 3
             })
         }
     }
