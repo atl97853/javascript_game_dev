@@ -37,7 +37,7 @@ class Player {
 }
 
 class Platform {
-    constructor({ x, y, imageSrc, scale, framesMax }) {
+    constructor({ x, y, imageSrc }) {
         this.position = {
             x,
             y
@@ -46,13 +46,9 @@ class Platform {
         this.image.src = imageSrc
         this.width = this.image.width
         this.height = this.image.height
-        // this.scale = scale
-        // this.framesMax = framesMax
     }
 
     draw() {
-        // c.fillStyle = 'blue'
-        // c.fillRect(this.position.x, this.position.y, this.width, this.height)
         c.drawImage(
             this.image,
             this.position.x,
@@ -61,30 +57,8 @@ class Platform {
     }
 }
 
-// imageSrc: './assets/kenji/Idle.png',
-//     framesMax: 4,
-//         scale: 2.5,
-//             offset: {
-//     x: 215,
-//         y: 167,
-//     },
-
-// this.image = new Image();
-// this.image.src = imageSrc;
-// this.scale = scale
-// this.framesMax = framesMax;
-
-
-// draw() {
-//     c.drawImage(
-//         this.image,
-//         this.frameCurrent * (this.image.width / this.framesMax),
-//         0,
-//         this.image.width / this.framesMax,
-//         this.image.height,
-//         this.position.x - this.offset.x,
-//         this.position.y - this.offset.y,
-//         (this.image.width / this.framesMax) * this.scale,
-//         this.image.height * this.scale,
-//     )
-// };
+class GenericObjects extends Platform {
+    constructor({ x, y, imageSrc }) {
+        super({ x, y, imageSrc })
+    }
+}
