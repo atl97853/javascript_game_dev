@@ -10,7 +10,7 @@ Platforms ✔
 "Scroll" the background ✔
 Win scenario ✔
 Image platforms ✔
-Parallax scroll
+Parallax scroll ✔
 Death pits 
 Level creation
 Fine-tuning 
