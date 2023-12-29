@@ -13,13 +13,13 @@ const player = new Player()
 // const platforms = [new Platform({ x: 200, y: 100 }), new Platform({ x: 500, y: 200 })]
 const platforms = [
     new Platform({
-        x: 200,
-        y: 100,
+        x: -1,
+        y: 470,
         imageSrc: './assets_mario_game/platform.png',
     }),
     new Platform({
         x: 500,
-        y: 200,
+        y: 470,
         imageSrc: './assets_mario_game/platform.png',
     })
 ]
@@ -41,7 +41,8 @@ const keys = {
 
 function animate() {
     requestAnimationFrame(animate)
-    c.clearRect(0, 0, canvas.width, canvas.height)
+    c.fillStyle = 'white'
+    c.fillRect(0, 0, canvas.width, canvas.height)
     platforms.forEach(platform => {
         platform.draw()
     })
