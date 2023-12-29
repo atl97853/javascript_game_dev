@@ -37,10 +37,10 @@ class Player {
 }
 
 class Platform {
-    constructor() {
+    constructor({ x, y }) {
         this.position = {
-            x: 200,
-            y: 100
+            x,
+            y
         }
         this.width = 200
         this.height = 20
