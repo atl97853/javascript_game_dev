@@ -7,7 +7,7 @@ Player creation ✔
 Gravity ✔
 Player movement ✔
 Platforms ✔
-"Scroll" the background 
+"Scroll" the background ✔
 Win scenario 
 Image platforms 
 Parallax scroll
