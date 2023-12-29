@@ -9,37 +9,9 @@ const gravity = 0.5
 
 let player = new Player()
 // const platforms = [new Platform({ x: 200, y: 100 }), new Platform({ x: 500, y: 200 })]
-let platforms = [
-    new Platform({
-        x: -1,
-        y: 470,
-        imageSrc: './assets_mario_game/platform.png',
-    }),
-    new Platform({
-        x: 500,
-        y: 470,
-        imageSrc: './assets_mario_game/platform.png',
-    }),
-    new Platform({
-        x: 540 * 2 + 100,
-        y: 470,
-        imageSrc: './assets_mario_game/platform.png',
-    }),
-]
+let platforms = []
 
-let genericObjects = [
-    new GenericObjects({
-        x: -1,
-        y: -1,
-        imageSrc: './assets_mario_game/background.png',
-    }),
-    new GenericObjects({
-        x: -1,
-        y: -1,
-        imageSrc: './assets_mario_game/hills.png',
-    }),
-]
-
+let genericObjects = []
 
 const keys = {
     right: {
@@ -78,6 +50,11 @@ function init() {
             y: 470,
             imageSrc: './assets_mario_game/platform.png',
         }),
+        new Platform({
+            x: 540 * 3 + 100,
+            y: 470,
+            imageSrc: './assets_mario_game/platform.png',
+        }),
     ]
 
     genericObjects = [
@@ -108,30 +85,30 @@ function animate() {
 
 
     if (keys.right.pressed && player.position.x < 400) {
-        player.velocity.x = 5
+        player.velocity.x = player.speed
     } else if (keys.left.pressed && player.position.x > 100) {
-        player.velocity.x = -5
+        player.velocity.x = -player.speed
     } else {
         player.velocity.x = 0
 
         // platforms scroll feature
         if (keys.right.pressed) {
-            scrollOffset += 5
+            scrollOffset += player.speed
             platforms.forEach(platform => {
                 platform.draw()
-                platform.position.x -= 5
+                platform.position.x -= player.speed
             })
             genericObjects.forEach((genericObjects) => {
-                genericObjects.position.x -= 3
+                genericObjects.position.x -= player.speed * .66
             })
         } else if (keys.left.pressed) {
-            scrollOffset -= 5
+            scrollOffset -= player.speed
             platforms.forEach(platform => {
                 platform.draw()
-                platform.position.x += 5
+                platform.position.x += player.speed
             })
             genericObjects.forEach((genericObjects) => {
-                genericObjects.position.x += 3
+                genericObjects.position.x += player.speed * .66
             })
         }
     }
@@ -156,7 +133,7 @@ function animate() {
     }
 }
 
-
+init()
 animate()
 
 addEventListener('keydown', ({ key }) => {
@@ -174,7 +151,7 @@ addEventListener('keydown', ({ key }) => {
             break
         case 'w':
             console.log('up')
-            player.velocity.y -= 20
+            player.velocity.y -= 10
             break
     }
     console.log(keys.right)
