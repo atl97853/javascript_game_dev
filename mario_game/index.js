@@ -7,6 +7,8 @@ canvas.height = innerHeight
 
 const gravity = 0.5
 
+let scrollOffset = 0
+
 const player = new Player()
 const platforms = [new Platform({ x: 200, y: 100 }), new Platform({ x: 500, y: 200 })]
 
@@ -41,19 +43,21 @@ function animate() {
     } else {
         player.velocity.x = 0
 
+        // platforms scroll feature
         if (keys.right.pressed) {
+            scrollOffset += 5
             platforms.forEach(platform => {
                 platform.draw()
                 platform.position.x -= 5
             })
         } else if (keys.left.pressed) {
+            scrollOffset -= 5
             platforms.forEach(platform => {
                 platform.draw()
                 platform.position.x += 5
             })
         }
     }
-
     // collision detection between player and platform 
     platforms.forEach(platform => {
         if (player.position.y + player.height <= platform.position.y &&
@@ -63,6 +67,10 @@ function animate() {
             player.velocity.y = 0
         }
     })
+    // console.log(scrollOffset)
+    if (scrollOffset > 2000) {
+        console.log('you win')
+    }
 }
 
 animate()
