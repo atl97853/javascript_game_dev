@@ -58,6 +58,17 @@ const simpleBlock = new SimpleBlock({
     y: 400
 })
 
+function onCollision(objA, objB) {
+    if (
+        objA.position.x + objA.width >= objB.position.x &&
+        objA.position.x <= objB.position.x + objB.width &&
+        objA.position.y + objA.height >= objB.position.y &&
+        objA.position.y <= objB.position.y + objB.height
+    ) {
+        console.log('collision is happening!!')
+    }
+}
+
 function animate() {
     requestAnimationFrame(animate)
     c.fillStyle = 'blue'
@@ -69,13 +80,7 @@ function animate() {
     // if (player.position.y + player.height < canvas.height) {
     //     player.position.y += gravity
     // }
-
-    if (
-        player.position.x + player.width <= simpleBlock.position.x + simpleBlock.width
-        // player.position.x + player.width >= simpleBlock.position.x + simpleBlock.width
-    ) {
-        console.log('collision is happening!!')
-    }
+    onCollision(player, simpleBlock)
 
 }
 
