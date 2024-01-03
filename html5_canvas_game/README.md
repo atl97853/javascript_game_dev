@@ -1,7 +1,7 @@
 Basic Game Checklist:
 Create a player ✔
 Shoot projectiles ✔
-Create enemies
+Create enemies ✔
 Detect collision on enemy / projectile hit 
 Detect collision on enemy / player hit 
 Remove off screen projectiles 
