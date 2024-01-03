@@ -8,13 +8,13 @@ const x = canvas.width / 2
 const y = canvas.height / 2
 
 const player = new Player(x, y, 30, 'blue')
-const projectile = []
+const projectiles = []
 const enemies = []
 
 
 function spawnEnemies() {
     setInterval(() => {
-        const radius = Math.random() * (40 - 10) + 10
+        const radius = Math.random() * (40 - 20) + 15
         let x
         let y
         if (Math.random() < 0.5) {
@@ -46,12 +46,24 @@ function animate() {
 
     player.draw()
 
-    projectile.forEach((projectile) => {
+    projectiles.forEach((projectile) => {
         projectile.update()
     })
 
-    enemies.forEach((enemy) => {
+    enemies.forEach((enemy, enemyIndex) => {
         enemy.update()
+        // collision between projectiles and enemies
+        projectiles.forEach((projectile, projectileIndex) => {
+            const dist = Math.hypot(projectile.x - enemy.x, projectile.y - enemy.y)
+            // objects collision
+            if (dist - enemy.radius - projectile.radius < 1) {
+                setTimeout(() => {
+                    console.log('collision')
+                    enemies.splice(enemyIndex, 1)
+                    projectiles.splice(projectileIndex, 1)
+                }, 0)
+            }
+        })
     })
 }
 
@@ -68,7 +80,7 @@ window.addEventListener('click', (event) => {
         y: Math.sin(angle)
     }
 
-    projectile.push(new Projectile(
+    projectiles.push(new Projectile(
         x,
         y,
         10,
