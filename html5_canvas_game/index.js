@@ -32,23 +32,49 @@ class Projectile extends Player {
         super(x, y, radius, color)
         this.velocity = velocity
     }
+
+    update() {
+        this.draw()
+        this.x = this.x + this.velocity.x
+        this.y = this.y + this.velocity.y
+    }
 }
 
 const x = canvas.width / 2
 const y = canvas.height / 2
 
 const player = new Player(x, y, 30, 'blue')
-player.draw()
+const projectile = []
 
-console.log(player)
+function animate() {
+    requestAnimationFrame(animate)
+    c.clearRect(0, 0, canvas.width, canvas.height)
+    player.draw()
+    projectile.forEach((projectile) => {
+        projectile.update()
+    })
+}
 
 window.addEventListener('click', (event) => {
-    const projectile = new Projectile(
+
+    // projectile creation and continues
+    const angle = Math.atan2(
+        event.clientY - y,
+        event.clientX - x
+    )
+
+    const velocity = {
+        x: Math.cos(angle),
+        y: Math.sin(angle)
+    }
+
+    projectile.push(new Projectile(
         x,
         y,
         10,
         'red',
-        null
-    )
-    projectile.draw()
+        velocity
+    ))
 })
+
+animate()
