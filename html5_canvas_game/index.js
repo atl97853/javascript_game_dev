@@ -14,7 +14,7 @@ const enemies = []
 
 function spawnEnemies() {
     setInterval(() => {
-        const radius = 30
+        const radius = Math.random() * (40 - 10) + 10
         let x
         let y
         if (Math.random() < 0.5) {
