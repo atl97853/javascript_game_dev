@@ -4,61 +4,25 @@ const c = canvas.getContext('2d')
 canvas.width = 1024
 canvas.height = 576
 
-class Player {
-    constructor({ x, y }) {
-        this.position = {
-            x,
-            y
-        }
-        this.width = 40
-        this.height = 40
-    }
-
-    draw() {
-        c.fillStyle = 'black'
-        c.fillRect(
-            this.position.x,
-            this.position.y,
-            this.width,
-            this.height
-        )
-    }
-}
-
-class SimpleBlock {
-    constructor({ x, y }) {
-        this.position = {
-            x,
-            y
-        }
-        this.width = 60
-        this.height = 60
-    }
-
-    draw() {
-        c.fillStyle = 'red'
-        c.fillRect(
-            this.position.x,
-            this.position.y,
-            this.width,
-            this.height
-        )
-    }
-}
-
-// const gravity = 10
-
 const player = new Player({
     x: canvas.width / 2,
-    y: 100
+    y: 100,
+    width: 40,
+    height: 40,
+    color: 'black',
 })
 
 const simpleBlock = new SimpleBlock({
-    x: 300,
-    y: 400
+    x: 500,
+    y: 200,
+    width: 60,
+    height: 60,
+    color: 'red',
 })
 
 function onCollision(objA, objB) {
+    // objA = player 
+    // objB = simpleBlock
     if (
         objA.position.x + objA.width >= objB.position.x &&
         objA.position.x <= objB.position.x + objB.width &&
@@ -69,6 +33,7 @@ function onCollision(objA, objB) {
     }
 }
 
+let gravity = 0
 function animate() {
     requestAnimationFrame(animate)
     c.fillStyle = 'blue'
@@ -76,33 +41,39 @@ function animate() {
     player.draw()
     simpleBlock.draw()
 
-    // // gravity
-    // if (player.position.y + player.height < canvas.height) {
-    //     player.position.y += gravity
-    // }
-    onCollision(player, simpleBlock)
+    // gravity
+    if (player.position.y <= canvas.height - (player.height * 2)) {
+        console.log('gravity')
 
+        player.position.y += gravity
+        gravity += 2
+        console.log(gravity)
+    } else {
+        gravity = 2
+    }
+    onCollision(player, simpleBlock)
 }
 
 animate()
 
 addEventListener('keydown', ({ key }) => {
+    const velocity = 20
     switch (key) {
         case 'w':
             console.log('up')
-            player.position.y -= 20
+            player.position.y -= velocity * 10
             break
         case 'd':
             console.log('right')
-            player.position.x += 20
+            player.position.x += velocity
             break
         case 'a':
             console.log('left')
-            player.position.x -= 20
+            player.position.x -= velocity
             break
-        case 's':
-            console.log('down')
-            player.position.y += 20
-            break
+        // case 's':
+        //     console.log('down')
+        //     player.position.y += velocity
+        //     break
     }
 })
