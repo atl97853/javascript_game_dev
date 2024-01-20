@@ -10,6 +10,7 @@ const y = canvas.height / 2
 const player = new Player(x, y, 15, 'white')
 const projectiles = []
 const enemies = []
+const particles = []
 
 
 function spawnEnemies() {
@@ -47,7 +48,13 @@ function animate() {
     c.fillRect(0, 0, canvas.width, canvas.height)
 
     player.draw()
-
+    particles.forEach((particle, index) => {
+        if (particle.alpha <= 0) {
+            particles.splice(index, 1)
+        } else {
+            particle.update()
+        }
+    })
     projectiles.forEach((projectile, index) => {
         projectile.update()
 
@@ -77,11 +84,34 @@ function animate() {
             const dist = Math.hypot(projectile.x - enemy.x, projectile.y - enemy.y)
             // objects collision
             if (dist - enemy.radius - projectile.radius < 1) {
-                setTimeout(() => {
-                    console.log('collision')
-                    enemies.splice(enemyIndex, 1)
-                    projectiles.splice(projectileIndex, 1)
-                }, 0)
+                // create explosions 
+                for (let i = 0; i < enemy.radius * 2; i++) {
+                    particles.push(new Particle(
+                        projectile.x,
+                        projectile.y,
+                        Math.random() * 2,
+                        enemy.color,
+                        {
+                            x: (Math.random() - 0.5) * (Math.random() * 6),
+                            y: (Math.random() - 0.5) * (Math.random() * 6)
+                        }
+                    ))
+                }
+                if (enemy.radius - 10 > 5) {
+                    gsap.to(enemy, {
+                        radius: enemy.radius - 10
+                    })
+                    setTimeout(() => {
+                        console.log('collision')
+                        projectiles.splice(projectileIndex, 1)
+                    }, 0)
+                } else {
+                    setTimeout(() => {
+                        console.log('collision')
+                        enemies.splice(enemyIndex, 1)
+                        projectiles.splice(projectileIndex, 1)
+                    }, 0)
+                }
             }
         })
     })
