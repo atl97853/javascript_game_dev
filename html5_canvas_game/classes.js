@@ -43,5 +43,30 @@ class Enemy extends Projectile {
 class Particle extends Enemy {
     constructor(x, y, radius, color, velocity) {
         super(x, y, radius, color, velocity)
+        this.alpha = 1
+    }
+
+    draw() {
+        c.save()
+        c.globalAlpha = this.alpha
+        c.beginPath()
+        c.arc(
+            this.x,
+            this.y,
+            this.radius,
+            0,
+            Math.PI * 2,
+            false
+        )
+        c.fillStyle = this.color
+        c.fill()
+        c.restore()
+    }
+
+    update() {
+        this.draw()
+        this.x = this.x + this.velocity.x
+        this.y = this.y + this.velocity.y
+        this.alpha -= 0.01
     }
 }
