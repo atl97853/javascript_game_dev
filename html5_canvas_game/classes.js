@@ -40,6 +40,7 @@ class Enemy extends Projectile {
     }
 }
 
+const friction = 0.99
 class Particle extends Enemy {
     constructor(x, y, radius, color, velocity) {
         super(x, y, radius, color, velocity)
@@ -65,6 +66,8 @@ class Particle extends Enemy {
 
     update() {
         this.draw()
+        this.velocity.x *= friction
+        this.velocity.y *= friction
         this.x = this.x + this.velocity.x
         this.y = this.y + this.velocity.y
         this.alpha -= 0.01
