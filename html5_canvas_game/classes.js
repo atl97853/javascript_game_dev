@@ -33,3 +33,15 @@ class Projectile extends Player {
         this.y = this.y + this.velocity.y
     }
 }
+
+class Enemy extends Projectile {
+    constructor(x, y, radius, color, velocity) {
+        super(x, y, radius, color, velocity)
+    }
+}
+
+class Particle extends Enemy {
+    constructor(x, y, radius, color, velocity) {
+        super(x, y, radius, color, velocity)
+    }
+}
