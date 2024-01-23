@@ -8,7 +8,7 @@ Remove off screen projectiles ✔
 Colorize game ✔
 Shrink enemies on hit ✔
 Create particle explosion on hit ✔
-Add score 
+Add score ✔
 Add game over UI 
 Add restart button
 Add start game button
