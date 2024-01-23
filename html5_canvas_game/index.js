@@ -7,6 +7,7 @@ canvas.height = window.innerHeight
 const x = canvas.width / 2
 const y = canvas.height / 2
 
+const scoreEl = document.querySelector('.score')
 const player = new Player(x, y, 15, 'white')
 const projectiles = []
 const enemies = []
@@ -42,6 +43,8 @@ function spawnEnemies() {
 }
 
 let animationId
+let score = 0
+
 function animate() {
     animationId = requestAnimationFrame(animate)
     c.fillStyle = 'rgba(0, 0, 0, 0.1)'
@@ -84,6 +87,9 @@ function animate() {
             const dist = Math.hypot(projectile.x - enemy.x, projectile.y - enemy.y)
             // objects collision
             if (dist - enemy.radius - projectile.radius < 1) {
+                // increase our score 
+                score += 100
+                scoreEl.innerHTML = score
                 // create explosions 
                 for (let i = 0; i < enemy.radius * 2; i++) {
                     particles.push(new Particle(
@@ -106,6 +112,9 @@ function animate() {
                         projectiles.splice(projectileIndex, 1)
                     }, 0)
                 } else {
+                    // remove from scene altogether
+                    score += 100
+                    scoreEl.innerHTML = score
                     setTimeout(() => {
                         console.log('collision')
                         enemies.splice(enemyIndex, 1)
