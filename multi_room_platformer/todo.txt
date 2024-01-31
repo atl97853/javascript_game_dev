@@ -1,5 +1,5 @@
 The Essentials: 
-Project setup
+Project setup (done)
 Create a player
 Gravity
 Player movement 
