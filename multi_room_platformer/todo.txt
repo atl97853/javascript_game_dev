@@ -1,6 +1,6 @@
 The Essentials: 
 Project setup (done)
-Create a player
+Create a player (done)
 Gravity
 Player movement 
 Background sprite 
