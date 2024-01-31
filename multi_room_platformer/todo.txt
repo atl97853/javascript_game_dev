@@ -1,0 +1,17 @@
+The Essentials: 
+Project setup
+Create a player
+Gravity
+Player movement 
+Background sprite 
+Collision blocks 
+Collision detection
+Sprite animation 
+HitBox implementation 
+Sprite swapping 
+Entering doors 
+Change levels 
+Next steps 
+
+youtube tutorial: 
+https://youtu.be/Lcdc2v-9PjA?si=2-JiOJZEo1IEoHUI
