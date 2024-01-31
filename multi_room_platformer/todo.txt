@@ -1,7 +1,7 @@
 The Essentials: 
 Project setup (done)
 Create a player (done)
-Gravity
+Gravity (done)
 Player movement 
 Background sprite 
 Collision blocks 
