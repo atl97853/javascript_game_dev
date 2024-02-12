@@ -3,7 +3,7 @@ Project setup (done)
 Create a player (done)
 Gravity (done)
 Player movement (done)
-Background sprite 
+Background sprite (done)
 Collision blocks 
 Collision detection
 Sprite animation 
